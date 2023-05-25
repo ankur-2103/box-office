@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { styled } from "styled-components";
 import { SearchCard, SearchImgWrapper } from "../common/SearchCard";
 import { StarIcon } from "../common/StarIcon";
