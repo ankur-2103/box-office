@@ -57,7 +57,7 @@ const ShowCard = ({ id, name, image, summary, onStarClick, isStarred }) => {
             <h1>{name}</h1>
             <p>{summaryStripped}</p>
             <ActionSection>
-                <a href={`/show/${id}`} target="_blank" rel="noreferrer">Read more</a>
+                <a href={`/#/show/${id}`}>Read more</a>
                 <StarBtn type="button" onClick={() => onStarClick(id)} className={isStarred && 'animate'}><StarIcon active={isStarred} /></StarBtn>
             </ActionSection>
         </SearchCard>

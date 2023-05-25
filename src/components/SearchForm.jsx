@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useSearchStr } from "../lib/useSearchStr.js";
 import CustomRadio from './CustomRadio.jsx';
 import { styled } from "styled-components";
@@ -64,7 +64,21 @@ const SearchForm = ({onSearch}) => {
             searchOption
         }
         onSearch(options);
+  }
+  
+  const getDataOnChange = () => {
+    const options = {
+        q: searchStr,
+        searchOption
     }
+    onSearch(options);
+  }
+
+  useEffect(() => {
+    if (searchStr && searchStr !== '') {
+      getDataOnChange()  
+    }
+  },[searchStr])
 
     return (  
         <form onSubmit={onSubmit}>
